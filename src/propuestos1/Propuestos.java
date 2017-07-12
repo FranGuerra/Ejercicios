@@ -8,11 +8,11 @@ public class Propuestos {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Ejercicio Propuesto 1
-		Propuestos.NuloPositivoNegativo();
+		//Propuestos.NuloPositivoNegativo();
 		//Ejercicio Propuesto 2
-		Propuestos.SumaRestaProductoDivision();
+		//Propuestos.SumaRestaProductoDivision();
 		//Ejercicio Propuesto 8
-		Propuestos.Potencia();
+		//Propuestos.Potencia();
 		//Ejercicio Propuesto 8 con función recursiva
 		/*
 		int base, exponente;
@@ -25,12 +25,14 @@ public class Propuestos {
 		System.out.println("La potencia es: " + Propuestos.PotenciaRecursividad(base, exponente));
 		*/
 		//Ejercicio Propuesto 11
-		System.out.println("El número de cifras es: " + Propuestos.Cifras());
+		//System.out.println("El número de cifras es: " + Propuestos.Cifras());
 		//Ejercicio Propuesto 15
-		Propuestos.PerteneceFibonacci();
+		//Propuestos.PerteneceFibonacci();
 		//Ejercicio Propuesto 16
-		System.out.println(Propuestos.Fibonacci(10));
-		Propuestos.PruebaArrays();
+		//System.out.println(Propuestos.Fibonacci(10));
+		//Propuestos.PruebaArrays();
+		Propuestos.Esprimo();
+		//Propuestos.DescomponerFactoresPrimos();
 
 	}
 	
@@ -219,6 +221,44 @@ public class Propuestos {
 			testArrayInt[i] = i + 1;
 		}
 		System.out.println(Arrays.toString(testArrayInt));
+	}
+	
+	public static void Esprimo() {
+		
+		int numero, esprimo = 0;
+		Scanner s = new Scanner(System.in);
+		System.out.println("Introduce un número: ");
+		numero = s.nextInt();
+		s.close();
+		
+		for(int i = 1; i <= numero; i++) {
+			if(numero%i == 0) {
+				System.out.println("mod - " + i);
+				esprimo++;
+			}
+		}
+		if(esprimo == 2) {
+			System.out.println("El número es primo");
+		}
+		else {
+			System.out.println("El número NO es primo");
+		}
+	}
+	
+	public static void DescomponerFactoresPrimos() {
+		
+		int numero;
+		Scanner s = new Scanner(System.in);
+		System.out.println("Introduce el número para descomponer: ");
+		numero = s.nextInt();
+		s.close();
+		
+		for(int factor = 2; factor <= numero; factor++) {
+			while(numero%factor == 0) {
+				System.out.println(numero + " | " + factor);
+				numero/=factor;
+			}
+		}
 	}
 
 }
